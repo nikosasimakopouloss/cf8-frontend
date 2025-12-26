@@ -1,12 +1,12 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Step2PersonTable } from './components/step2-person-table/step2-person-table';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [Step2PersonTable],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('cf8-frontend');
+  public name = "Markos"
 }
