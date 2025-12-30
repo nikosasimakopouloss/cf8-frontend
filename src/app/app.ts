@@ -28,6 +28,8 @@ import { Person } from './shared/interfaces/person';
 })
 export class App {
   public name = "Markos"
+  doNotShowRest:boolean = true;
+
 
 
 
