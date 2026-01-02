@@ -17,6 +17,7 @@ export class ListGroupMenu {
     {text: "Step 5 Event Bind", link: 'event-bind-example'},
     {text: "Step 6 Simple Datatable", link:'simple-datatable-example'},
      {text: "Step 7 Component Output", link: 'component-output-example'},
+     {text: "Step 8 Template Driven Forms", link:'template-driven-form-example'},
 
 
  ]

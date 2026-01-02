@@ -5,6 +5,7 @@ import { Step4ForDirective } from './components/step4-for-directive/step4-for-di
 import { Step5EventBind } from './components/step5-event-bind/step5-event-bind';
 import { Step6SimpleDatatableShow } from './components/step6-simple-datatable-show/step6-simple-datatable-show';
 import { Step7ComponentOutput } from './components/step7-component-output/step7-component-output';
+import { Step8TemplateDrivenForms } from './components/step8-template-driven-forms/step8-template-driven-forms';
 
 
 
@@ -18,6 +19,7 @@ export const routes: Routes = [
   {path:"event-bind-example", component:Step5EventBind},
   {path:'simple-datatable-example', component:Step6SimpleDatatableShow},
   {path: 'component-output-example', component: Step7ComponentOutput},
+  {path: 'template-driven-form-example', component:Step8TemplateDrivenForms},
 
 
 
