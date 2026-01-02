@@ -28,5 +28,13 @@ export class PersonTemplateForm {
     
   }
 
+  OnSetValue(){
+    this.form?.setValue({
+      firstname: "lakis",
+      lastname: "lalakis",
+      email:"lakis@aueb.gr"
+    })
+  }
+
   
 }

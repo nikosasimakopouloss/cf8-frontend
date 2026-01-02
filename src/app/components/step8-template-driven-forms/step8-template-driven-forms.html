@@ -1,9 +1,9 @@
 
 <h4>Template Driven Forms</h4>
 <div class="d-flex gap-4">
-  <app-person-template-form ></app-person-template-form>
+  <app-person-template-form (personOutput)="onPerson($event)"></app-person-template-form>
   <div class="d-flex flex-column gap-4">
-    <app-step3-person-table-input ></app-step3-person-table-input>
-    <app-step6-simple-datatable></app-step6-simple-datatable>
+    <app-step3-person-table-input [person]="objectPerson" ></app-step3-person-table-input>
+    <app-step6-simple-datatable [data]="arrayPerson"></app-step6-simple-datatable>
   </div>
 </div>
