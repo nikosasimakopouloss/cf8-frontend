@@ -1,9 +1,12 @@
-import { Component, inject, Inject } from '@angular/core';
+import { Component, inject,  } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserService } from '../../shared/services/user.service';
 import { MatFormField, MatLabel, MatError, MatInput } from "@angular/material/input";
 import { MatAnchor } from '@angular/material/button';
-import { Credentials } from '../../shared/interfaces/user';
+import { Credentials, LoggedInUser } from '../../shared/interfaces/user';
+
+import { jwtDecode } from 'jwt-decode';
+
 
 @Component({
   selector: 'app-step10-user-login',
@@ -29,16 +32,60 @@ export class Step10UserLogin {
 onSubmit(){
     console.log(this.form.value);
     this.userService.loginUser(this.form.value as Credentials)
-    .subscribe(response => {
+    // .subscribe(response => {
+    //     console.log(response);
+    // })
+    .subscribe({
+        next: (response) => {
+          
+          console.log(response.token);
+          
+          this.invalidLogin = false;
 
-      console.log (response);
+        const access_token = response.token;
+          const decodedTokenSubject = jwtDecode(access_token) as unknown as LoggedInUser
+          console.log(decodedTokenSubject)
 
+
+            localStorage.setItem('access_token', access_token)
+
+
+            this.userService.user.set({
+
+              username: decodedTokenSubject.username,
+              email: decodedTokenSubject.email,
+              roles: decodedTokenSubject.roles
+
+            })
+          
+         
+          
+
+
+
+        },
+    
+    error: (error) => {
+        console.log("Login", error);
+        this.invalidLogin = true;
+    }
+    
     })
 
-}
+  }
+
+
+
+  }
 
 
 
 
 
-}
+
+
+
+
+
+
+

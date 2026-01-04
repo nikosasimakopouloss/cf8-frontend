@@ -1,3 +1,20 @@
 <nav class="navbar navbar-dark bg-primary justify-content-between">
   <a class="navbar-brand ms-3 cursor-pointer" role="button" routerLink="">CF - Angular Introduction</a>
+
+
+  @if (user()) {
+    <span class="me-3 d-flex gap-2 text-light">
+      Welcome, {{user()?.username}}
+      <span role="button" (click)="logout()">Logout</span>
+    </span>
+  } @else {
+    <span 
+      class="text-light me-3 d-flex gap-2 align-items-center"
+      role="button"
+      routerLink="login-example"
+      >
+      Login
+    </span>
+  }
+
   </nav>
