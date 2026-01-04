@@ -1,0 +1,22 @@
+<h4>User Login</h4>
+
+<form [formGroup]="form" class="d-flex flex-column gap-3 w-50">
+  <mat-form-field>
+    <mat-label>Urername:</mat-label>
+    <input type="text" matInput formControlName="username">
+    <mat-error>Username is required</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Password:</mat-label>
+    <input type="text" matInput formControlName="password">
+    <mat-error>Passord is required</mat-error>
+  </mat-form-field>
+</form>
+
+<button mat-flat-button color="primary" (click)="onSubmit()">Submit</button>
+
+@if (invalidLogin) {
+  <div class="alert alert-danger mt-2">
+    <strong>Error:</strong> Invalid username or password.
+  </div>
+}

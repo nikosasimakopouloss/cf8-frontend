@@ -12,6 +12,7 @@ import { Step9ReativeForms } from './components/step9-reative-forms/step9-reativ
 
 
 import { Welcome } from './components/welcome/welcome';
+import { Step10UserLogin } from './components/step10-user-login/step10-user-login';
 
 
 export const routes: Routes = [
@@ -23,6 +24,8 @@ export const routes: Routes = [
   {path: 'component-output-example', component: Step7ComponentOutput},
   {path: 'template-driven-form-example', component:Step8TemplateDrivenForms},
   {path: 'reactive-form-example', component: Step9ReativeForms},
+  {path: 'login-example', component: Step10UserLogin},
+
 
 
 
