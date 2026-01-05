@@ -1,0 +1,60 @@
+<div>
+  <h4>Create User</h4>
+
+
+
+   <form class="d-flex flex-column" [formGroup]="form">
+    
+    <mat-form-field>
+      <mat-label>Username</mat-label>
+      <input type="text" matInput formControlName="username">
+      <mat-error>Username is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Firstname</mat-label>
+        <input type="text" matInput formControlName="firstname">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Lastname</mat-label>
+      <input type="text" matInput formControlName="lastname">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input type="text" matInput formControlName="email">
+      <mat-error>Email is required</mat-error>
+    </mat-form-field>
+
+    <div class="d-flex flex-column" formGroupName="address"> 
+      <mat-form-field>
+        <mat-label>Area</mat-label>
+        <input type="text" matInput formControlName="area">
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Street</mat-label>
+        <input type="text" matInput formControlName="street">
+      </mat-form-field>
+    </div>
+    
+
+<div formArrayName="phone">
+
+
+  
+
+
+
+
+</div>
+
+
+
+
+
+   
+    
+  </form>
+</div>
