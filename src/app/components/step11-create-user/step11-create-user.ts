@@ -75,6 +75,7 @@ export class Step11CreateUser {
 
 
   phone = this.form.get('phone') as FormArray;
+  
 
 
 addPhoneNumber(){
@@ -106,6 +107,7 @@ addPhoneNumber(){
       error: (error) =>{
         console.log("There was error", error);
         this.registrationStatus = {success:false, message: error}
+        
       }
     })
   }
