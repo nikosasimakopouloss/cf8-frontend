@@ -49,4 +49,10 @@ loginUser (credentials: Credentials){
 
 
 
+   createUser(data:IUser){
+    return this.http.post<IUser>(API_URL, data);
+  }
+
+
+
 }

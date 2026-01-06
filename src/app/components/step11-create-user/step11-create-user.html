@@ -43,18 +43,71 @@
 <div formArrayName="phone">
 
 
-  
+ @for (p of phone.controls; let i=$index; track i){
+        <div [formGroupName]="i" class="d-flex gap-3 align-items-center">
+          <mat-form-field>
+            <mat-label>Type</mat-label>
+            <mat-select formControlName="type">
+              <mat-option value="mobile">Mobile</mat-option>
+              <mat-option value="work">Work</mat-option>
+              <mat-option value="home">Home</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+ <mat-form-field>
+            <mat-label>Number</mat-label>
+            <input type="text" matInput formControlName="number">
+          </mat-form-field>
+        
+        @if(phone.controls.length > 1 && i!==0){
+            <span role="button" class="cursor-pointer" (click)="deletePhoneNumber(i)" >delete</span>
+          }
+
+
+        @if(phone.controls[i].valid){
+            <span role="button" class="cursor-pointer" (click)="addPhoneNumber()">add</span>
+          }
+
+        
+        </div>
+
+
+  }
+
+  </div>
+
+<mat-form-field>
+      <mat-label>Password</mat-label>
+      <input type="password" matInput formControlName="password">
+      <mat-error>Password is missing or ivalid</mat-error>
+    </mat-form-field>
+
+<mat-form-field>
+      <mat-label>Confirm Passowrd</mat-label>
+      <input type="password" matInput formControlName="confirmPassword">
+      @if(form.get('confirmPassword')?.hasError("passwordMismatch")){
+        <mat-error>Passwords do not match</mat-error>
+      } @else {
+        @if (form.get("confirmPassword")?.touched && form.get("confirmPassword")?.invalid){
+          <mat-error>Confirm Password is missing or invalid</mat-error>
+        }
+      }
+    </mat-form-field>
 
 
 
-
-</div>
-
-
-
-
-
+</form>
    
-    
-  </form>
+
+<button
+    mat-raised-button
+    color="primary"
+    (click)="onSubmit()"
+    [disabled]="form.invalid"
+  >
+    Submit
+  </button>
+
+
+  
 </div>
